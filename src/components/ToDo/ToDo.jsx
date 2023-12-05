@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ToDo = ({ todo, handleCheckCompleted, handleDelete }) => {
+const ToDo = ({ todo, toggleCheckbox, deleteTodo }) => {
   return (
     <li className="list-group-item">
       <div className="row justify-content-between">
@@ -9,7 +9,7 @@ const ToDo = ({ todo, handleCheckCompleted, handleDelete }) => {
             className="form-check-input me-2"
             type="checkbox"
             checked={todo.completed}
-            onChange={() => handleCheckCompleted(todo.id)}
+            onChange={() => toggleCheckbox(todo.id)}
           />
           {todo.title}
         </div>
@@ -18,7 +18,7 @@ const ToDo = ({ todo, handleCheckCompleted, handleDelete }) => {
             type="button"
             className="btn-close"
             aria-label="Close"
-            onClick={() => handleDelete(todo.id)}
+            onClick={() => deleteTodo(todo.id)}
           ></button>
         </div>
       </div>
