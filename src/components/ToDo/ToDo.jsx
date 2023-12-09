@@ -19,6 +19,7 @@ const ToDo = ({ todo, toggleCheckbox, deleteTodo }) => {
             className="btn-close"
             aria-label="Close"
             onClick={() => deleteTodo(todo.id)}
+            disabled={!todo.completed}
           ></button>
         </div>
       </div>
